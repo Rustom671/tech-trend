@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchNews() {
         try {
-            const apiKey = aff2a12e5f974e1c9e1a354041131c9f; // Replace with your valid API key
-            const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&apiKey=${apiKey}`);
+            const apiKey = "aff2a12e5f974e1c9e1a354041131c9f"; // Ensure it's a string
+            const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&apiKey=${encodeURIComponent(apiKey)}`);
             
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
