@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const newsContainer = document.getElementById("news");
+    const newsContainer = document.getElementById("products");
 
     async function fetchNews() {
         try {
