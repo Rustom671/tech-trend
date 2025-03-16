@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function fetchNews() {
         try {
-            const apiKey = "YOUR_NEWSAPI_KEY"; // Store API key securely
+            const apiKey = "aff2a12e5f974e1c9e1a354041131c9f"; // Store API key securely
             const response = await fetch(`https://newsapi.org/v2/top-headlines?category=technology&apiKey=${aff2a12e5f974e1c9e1a354041131c9f}`);
             const data = await response.json();
 
