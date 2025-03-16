@@ -48,13 +48,28 @@ document.addEventListener("DOMContentLoaded", function () {
             newsContainer.innerHTML = "";
             allArticles.slice(0, 10).forEach(article => {
                 const articleElement = document.createElement("div");
-                articleElement.classList.add("news-item");
+                articleElement.classList.add("news-item", "card", "mb-3", "shadow-sm");
+
                 articleElement.innerHTML = `
-                    <h3>${article.title} (${article.source})</h3>
-                    ${article.thumbnail ? `<img src="${article.thumbnail}" alt="Article Image" style="max-width:100%;">` : ""}
-                    <p>${article.description || "No description available."}</p>
-                    <a href="${article.link}" target="_blank">Read More</a>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="${article.link}" target="_blank" class="text-dark text-decoration-none">
+                                ${article.title}
+                            </a>
+                        </h5>
+                        <h6 class="card-subtitle text-muted">${article.source}</h6>
+                        <div class="mt-3">
+                            <a href="${article.link}" target="_blank">
+                                <img src="${article.thumbnail || 'https://via.placeholder.com/600x300?text=No+Image'}" 
+                                     alt="Article Image" 
+                                     class="img-fluid rounded">
+                            </a>
+                        </div>
+                        <p class="card-text mt-3">${article.description || "No description available."}</p>
+                        <a href="${article.link}" target="_blank" class="btn btn-primary btn-sm">Read More</a>
+                    </div>
                 `;
+
                 newsContainer.appendChild(articleElement);
             });
 
