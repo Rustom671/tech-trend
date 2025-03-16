@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             data.articles.slice(0, 5).forEach(article => {
                 if (!article.title || !article.url) return; // Ensure data validity
                 
-                const articleElement = document.createElement("div");
+                const articleElement = document.createElement("products");
                 articleElement.classList.add("news-item");
                 articleElement.innerHTML = `
                     <h3>${article.title}</h3>
